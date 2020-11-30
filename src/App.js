@@ -25,3 +25,4 @@ export default App;
 
 //https://yts.mx/api/v2/list_movies.json
 // 노마드 코더의 영화목록 API 주소 변경 x -> https://yts-proxy.now.sh/list_movies.json
+// 노마드 코더의 영화상세 API 주소 변경 x -> https://yts-proxy.now.sh/movie-details.json
