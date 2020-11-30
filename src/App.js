@@ -1,43 +1,22 @@
 import React from "react";
-const log = console.log;
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    log(props);
   }
+  state = { isLoading: true };
 
-  state = {
-    count: 0,
-  };
-
-  add = () => {
-    this.setState((current) => ({
-      count: current.count + 1,
-    }));
-  };
-  minus = () => {
-    this.setState((current) => ({
-      count: current.count - 1,
-    }));
-  };
-
-  componentDidMount() {}
-
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ isLoading: false });
+    }, 6 * 1000);
+  }
   componentDidUpdate() {}
-
-  componentWillUnmount() {
-    // 보통 컴포넌트에 적용한 이벤트 리스너를 제거할 때 많이 사용
-  }
+  componentWillUnmount() {}
 
   render() {
-    return (
-      <>
-        <h1>This Number is: {this.state.count}</h1>
-        <button onClick={this.add}>Add</button>
-        <button onClick={this.minus}>Minus</button>
-      </>
-    );
+    const { isLoading } = this.state;
+    return <div>{isLoading ? "Loding..." : "We are ready"}</div>;
   }
 }
 
